@@ -3,7 +3,7 @@
 
 ## DP Instructions
 
-These instructions alter register values and/or status flags based on the values in registers. They all use an `op2` operand which can be a registers, like `op1` and `dest`, or various other options. See [Flexible Operand 2](flexible-operand-2.html) for details.
+These instructions alter register values and/or status flags based on the values in registers. They all use an `op2` operand which can be a registers, like `op1` and `dest`, or various other options. See [Flexible Operand 2](flexop2.html) for details.
 
 All DP instructions except Compare have an optional `S` suffix that controls if flags are changed or preserved. Flags are written from the value computed (and written to dest except in compare instructions):
 
