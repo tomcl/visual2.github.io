@@ -9,15 +9,15 @@ There are four types of instruction.
 
 | Type | Example | Format | Flags <br> Changed | Register <br> Changed |
 |------|--------|------------|-------------|----------------|
-| [Arithmetic](dp-list.html#arithmetic) | ADD R1, R2, R3 | ADD dest, op1 , op2 | if S suffix | dest |
-| [Logical](dp-list.html#logical) | AND R1, R2, R3 | AND dest, op1 , op2 | if S suffix | dest |
-| [Move](dp-list.html#move) | MOV R1, R2 | MOV dest, op2 | If S suffix | dest |
-| [Compare](dp-list.html#compare) | CMP R1, R2 | CMP op1, op2 | Always | None |
+| [Arithmetic](list.html#arithmetic) | ADD R1, R2, R3 | ADD dest, op1 , op2 | if S suffix | dest |
+| [Logical](list.html#logical) | AND R1, R2, R3 | AND dest, op1 , op2 | if S suffix | dest |
+| [Move](list.html#move) | MOV R1, R2 | MOV dest, op2 | If S suffix | dest |
+| [Compare](list.html#compare) | CMP R1, R2 | CMP op1, op2 | Always | None |
 
 
 ## Operand Formats
 
-The dest and op1 operands must always be registers. _Flexible op2_ is also allowed to be a number (prefixed by #) or a shifted register.
+The dest and op1 operands must always be registers. _Flexible op2_ is also allowed to be a literal number (prefixed by #) or a shifted register. All small and some large literal numbers [are allowed](flexop2.html#numeric-literals).
 
 | Op | Example | Format | Notes |
 |----------|---------------|
