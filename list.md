@@ -1,4 +1,7 @@
-﻿# ARM DP Instruction List
+﻿# Instructions
+
+
+## DP Instructions
 
 These instructions alter register values and/or status flags based on the values in registers.
 There are four types of instruction.
