@@ -122,17 +122,17 @@ The instruction suffix (`FD` here) indicating stack or tranfer type can be any o
 
 | Instruction | Function | Notes |
 |-------------|------------|-------|
-| **LDMFD R10!, {R1,R4-R6}** | Load registers R1,R4,R5,R6 from FD stack with stack pointer R10 |update R10|
-| **LDMFD R13, {R1,R10}** | Load registers R1,R10 from FD stack with stack pointer R13 |Do not change R13|
-| **STMFD R8!, {R1,R4-R6}** | Store registers R1,R4,R5,R5 to FD stack with stack pointer R8|Update R8|
-| **STMFD R3, {R1,R10,R14}** | Store registers R1,R10,R11,R12,R13 to FD stack with stack pointer R3| Do not change R3|
+| **LDMFD R10!, {R1,R4-R6}** | Load registers R1,R4,R5,R6 <br> from FD stack with stack pointer R10 |update R10|
+| **LDMFD R13, {R1,R10}** | Load registers R1,R10 <br> from FD stack with stack pointer R13 |Do not change R13|
+| **STMFD R8!, {R1,R4-R6}** | Store registers R1,R4,R5,R5 <br> to FD stack with stack pointer R8|Update R8|
+| **STMFD R3, {R1,R10,R14}** | Store registers R1,R10,R11,R12,R13 <br> to FD stack with stack pointer R3| Do not change R3|
 
 ### Pseudo-instructions and Directives
 
 | Example | Notes |
 |:----------|-----------|
-| **DAT DCD d1, d2,...,dn** | Set next n data words to numeric values given by operands d1,...,dn (no #).<br> Label `DAT` is usual but not compulsory
-| **DAT1 DCB d1, d2,...,dn** | Set next n data bytes to numeric values given by operands d1,...,dn (no #).<br> n must be divisible by 4. <br>Bytes are written in little-endian address order Label `DAT1` is usual but not compulsory.|
-| **DAT2 FILL EXPR** | EXPR is a literal expression (without #). Fill next EXPR words of data memory with 0 <br> Label `DAT2` is usual but not compulsory.
-| **ADR Ra, LABEL** | Set Ra to `LABEL`. Same as `MOV Ra, #LABEL` but literal values close to PC are allowed.<br> Useful to load data area label values.|
-| **LAB1 EQU LABEL + 4**| `EQU` sets its label, in this case `LAB1`, equal to the given constant expresion.<br> Forward references are allowed. `LAB1` is compulsory. |
+| **DAT DCD d1, d2,...,dn** | Set next n data words to numeric values <br> given by operands d1,...,dn (no #).<br> Label `DAT` is usual but not compulsory
+| **DAT1 DCB d1, d2,...,dn** | Set next n data bytes to numeric values <br> given by operands d1,...,dn (no #).<br> n must be divisible by 4. <br>Bytes are written in little-endian address order. <br> Label `DAT1` is usual but not compulsory.|
+| **DAT2 FILL EXPR** | EXPR is a literal expression (without #). <br> Fill next EXPR words of data memory with 0 <br> Label `DAT2` is usual but not compulsory.
+| **ADR Ra, LABEL** | Set Ra to `LABEL`. Same as `MOV Ra, #LABEL` but <br> literal values close to PC are allowed.<br> Useful to load data area label values.|
+| **LAB1 EQU LABEL + 4**| `EQU` sets its label, in this case `LAB1`, <br>  equal to the given constant expresion.<br> Forward references are allowed. |
