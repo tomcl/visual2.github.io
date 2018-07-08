@@ -1,7 +1,7 @@
 ## UAL Instructions
 
 
-### DP Instructions
+### Data Processing Instructions
 
 These instructions alter register values and/or status flags based on the values in registers. They all use an `op2` operand which can be a registers, like `op1` and `dest`, or various other options. See [Flexible Operand 2](flexop2.html) for details.
 
@@ -24,6 +24,7 @@ OpCode dest, op1, op2
 Example
 ```
 SUB R10, R5, R4 ; sets R10 equal to R5 + R4
+ADD R1, R1, #1  ; adds 1 to R1
 ```
 
 
@@ -43,7 +44,7 @@ Opcode dest, op1, op2
 ```
 Example
 ```
-ORR R1, R1, #16 ;sets bit 4 in R1
+ORR R1, R1, #16 ; sets bit 4 in R1
 ```
 
 
@@ -61,7 +62,7 @@ OpCode dest, op2
 ```
 Examples
 ```
-MVN R1, R1 ; inverts bits in R1
+MVN R1, R1   ; inverts bits in R1
 MOVS R10, R3 ; load R10 with copy of value in R3, write flags `NZ`.
 ```
 
@@ -80,7 +81,7 @@ OpCode op1, op2
 
 Examples
 ```
-CMP R0, R1 ;  set `NZCV` flags on subtraction R0 - R1
+CMP R0, R1 ; set `NZCV` flags on subtraction R0 - R1
 TEQ R3, R4 ; set `NZ` flags on R3 XOR R4
 ```
 
@@ -115,13 +116,13 @@ See [Address Modes](ea.html) for more details and additional modes.
 
 ### Multiple Register Memory Transfer Instructions
 
-The register list (in `{}`) can contain any distinct set of individual registers or ranges. The pointer register must not be in the register list.
+The register list (in `{}`) can contain any distinct set of individual registers or ranges, for 1 - 15 data words transferred. The pointer register must not be in the register list.
 
-The suffix indicating stack or tranfer type `FD` can be any of `FD,FA,ED,EA,IA,IB,DA,DB`. See [suffixes](suffixes.html) page for details of suffixes.
+The instruction suffix (`FD` here) indicating stack or tranfer type can be any of `FD,FA,ED,EA,IA,IB,DA,DB`. See [suffixes](suffixes.html) page for details of suffixes and specifcation of which memory addresses are used in the transfer.
 
 | Instruction | Function | Notes |
 |:----------|------------|-------|
-| **LDMFD R10!, {R1,R4-R6}** | Load registers R1,R4,R5,R5 from FD stack with stack pointer R10 |update R10|
+| **LDMFD R10!, {R1,R4-R6}** | Load registers R1,R4,R5,R6 from FD stack with stack pointer R10 |update R10|
 | **LDMFD R13, {R1,R10}** | Load registers R1,R10 from FD stack with stack pointer R13 |Do not change R13|
 | **STMFD R8!, {R1,R4-R6}** | Store registers R1,R4,R5,R5 to FD stack with stack pointer R8|Update R8|
 | **STMFD R3, {R1,R10,R14}** | Store registers R1,R10,R11,R12,R13 to FD stack with stack pointer R3| Do not change R3|
