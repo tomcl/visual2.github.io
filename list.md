@@ -1,4 +1,4 @@
-﻿# Instructions
+## UAL Instructions
 
 
 ### DP Instructions
@@ -16,7 +16,7 @@ All DP instructions except Compare have an optional `S` suffix that controls if 
 
 
 
-#### Arithmetic
+#### Arithmetic Instructions
 
 ```
 OpCode dest, op1, op2
@@ -36,7 +36,7 @@ SUB R10, R5, R4 ; sets R10 equal to R5 + R4
 | **SBC** | dest := op1 - op2 + C - 1| NZCV
 | **RSC** | dest := op2 - op1 + C - 1 | NZCV
 
-#### Logical
+#### Logical Instructions
 
 ```
 Opcode dest, op1, op2
@@ -54,7 +54,7 @@ ORR R1, R1, #16 ;sets bit 4 in R1
 | **EOR** | dest := op1 Bitwise exclusive OR op2 | NZ|
 | **BIC** | dest := op1 Bitwise AND NOT op2 | NZ |
 
-#### Move
+#### Move Instructions
 
 ```
 OpCode dest, op2
@@ -72,7 +72,7 @@ MOVS R10, R3 ; load R10 with copy of value in R3, write flags `NZ`.
 | **MVN** | dest := Bitwise invert op2 | NZ |
 
 
-#### Compare
+#### Compare Instructions
 
 ```
 OpCode op1, op2
@@ -85,26 +85,35 @@ TEQ R3, R4 ; set `NZ` flags on R3 XOR R4
 ```
 
 
-| OpCode | Function | Flags <br> changed |
-|----------|------------|
-| **CMP** |  set flags on op1 - op2| NZCV |
+| OpCode | Function | Flags changed |
+|----------|------------|:----------------:|
+| **CMP** |  set flags on op1 - op2 | NZCV |
 | **CMN** | set flags on op1 + op2 | NZCV |
 | **TST** | set flags on op1 Bitwise AND op2 | NZ |
 | **TEQ** | set flags on op1 Bitwise XOR op2 | NZ |
 
-### Single Register Memory Transfer
+### Single Register Memory Transfer Instructions
 
-EA has several forms, the simplest of which is a register Ra. See [Effective addresses](ea.html) for details.
+| EA | Address Mode |
+|-----|-------|
+| [Rb] | Register |
+| [Rb,#N] | Register |
+| [Rb,#N]! | Register pre-increment|
+| Rb, #N  | register post-increment|
+| other  | [Other modes](ea.html) |
+
+
+See [Address Modes](ea.html) for more details and additional modes.
 
 | Instruction | Function | Notes |
 |:----------|------------|-------|
 | **LDR Rd, EA** | Rd := mem32[EA] | [EA](ea.html) is divisible by 4
-| **LDRB Rd, [EA]** | Rd := mem8[EA] | 
-| **STR Rs, [EA]** | mem32[EA] := Rs | [EA](ea.html) is divisible by 4
-| **STRB Rs, [EA]**| mem8[EA] := Rs
+| **LDRB Rd, EA** | Rd := mem8[EA] | 
+| **STR Rs, EA** | mem32[EA] := Rs | [EA](ea.html) is divisible by 4
+| **STRB Rs, EA**| mem8[EA] := Rs
 
 
-### Multiple Register Memory Transfer
+### Multiple Register Memory Transfer Instructions
 
 The register list (in `{}`) can contain any distinct set of individual registers or ranges. The pointer register must not be in the register list.
 
@@ -121,8 +130,8 @@ The suffix indicating stack or tranfer type `FD` can be any of `FD,FA,ED,EA,IA,I
 
 | Example | Notes |
 |:----------|-----------|
-| **DAT DCD d1, d2,...,dn** | Set next n data words to numeric values <br> given by operands d1,...,dn (no #).<br> Label `DAT` is usual but not compulsory
-| **DAT1 DCB d1, d2,...,dn** | Set next n data bytes to numeric values <br> given by operands d1,...,dn (no #).<br> n must be divisible by 4. <br>Bytes are written in little-endian address order<br> Label `DAT1` is usual but not compulsory.|
-| **FDAT FILL EXPR** | EXPR is a literal expression (without #). <br> Fill next EXPR words of data memory with 0 <br> Label `FDAT` is usual but not compulsory.
-| **ADR Ra, LABEL** | Set Ra to `LABEL`. Same as `MOV Ra, #LABEL` <br>but literal values close to PC are allowed.<br> Useful to load data area label values.|
-| **LAB1 EQU LABEL + 4**| `EQU` sets its label, in this case `LAB1` <br> equal to the given constant expresion.<br> Forward references are allowed. |
+| **DAT DCD d1, d2,...,dn** | Set next n data words to numeric values given by operands d1,...,dn (no #).<br> Label `DAT` is usual but not compulsory
+| **DAT1 DCB d1, d2,...,dn** | Set next n data bytes to numeric values given by operands d1,...,dn (no #).<br> n must be divisible by 4. <br>Bytes are written in little-endian address order Label `DAT1` is usual but not compulsory.|
+| **DAT2 FILL EXPR** | EXPR is a literal expression (without #). Fill next EXPR words of data memory with 0 <br> Label `DAT2` is usual but not compulsory.
+| **ADR Ra, LABEL** | Set Ra to `LABEL`. Same as `MOV Ra, #LABEL` but literal values close to PC are allowed.<br> Useful to load data area label values.|
+| **LAB1 EQU LABEL + 4**| `EQU` sets its label, in this case `LAB1`, equal to the given constant expresion.<br> Forward references are allowed. `LAB1` is compulsory. |
