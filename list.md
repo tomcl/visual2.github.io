@@ -5,7 +5,7 @@
 
 These instructions alter register values and/or status flags based on the values in registers. They all use an `op2` operand which can be a registers, like `op1` and `dest`, or various other options. See [Flexible Operand 2](flexop2.html) for details.
 
-All DP instructions except Compare have an optional `S` suffix that controls if flags are changed or preserved. Flags are written from the value computed (and written to dest except in compare instructions):
+All DP instructions except Compare have an optional `S` suffix that controls if flags are changed (S) or preserved (no S). Flags are written from the value computed. The value computed is written to dest except in compare instructions.
 
 | Flag | Value written (if changed) |
 |:------:|------|
@@ -21,10 +21,11 @@ All DP instructions except Compare have an optional `S` suffix that controls if 
 ```
 OpCode dest, op1, op2
 ```
-Example
+Examples:
 ```
-SUB R10, R5, R4 ; sets R10 equal to R5 + R4
-ADD R1, R1, #1  ; adds 1 to R1
+SUB R10, R5, R4 ; set R10 equal to R5 + R4
+ADD R1, R1, #1  ; add 1 to R1
+RSBS R1, R1, #0 ; negate R1 setting NZCV
 ```
 
 
@@ -45,6 +46,7 @@ Opcode dest, op1, op2
 Example
 ```
 ORR R1, R1, #16 ; sets bit 4 in R1
+BICS R10, R10, 0x80000; clear bit 19 of R10, setting falgs NZ
 ```
 
 
