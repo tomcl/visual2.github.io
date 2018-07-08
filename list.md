@@ -121,7 +121,7 @@ The register list (in `{}`) can contain any distinct set of individual registers
 The instruction suffix (`FD` here) indicating stack or tranfer type can be any of `FD,FA,ED,EA,IA,IB,DA,DB`. See [suffixes](suffixes.html) page for details of suffixes and specifcation of which memory addresses are used in the transfer.
 
 | Instruction | Function | Notes |
-|:----------|------------|-------|
+|-------------|------------|-------|
 | **LDMFD R10!, {R1,R4-R6}** | Load registers R1,R4,R5,R6 from FD stack with stack pointer R10 |update R10|
 | **LDMFD R13, {R1,R10}** | Load registers R1,R10 from FD stack with stack pointer R13 |Do not change R13|
 | **STMFD R8!, {R1,R4-R6}** | Store registers R1,R4,R5,R5 to FD stack with stack pointer R8|Update R8|
