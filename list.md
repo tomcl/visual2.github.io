@@ -29,7 +29,7 @@ ADD R1, R1, #1  ; adds 1 to R1
 
 
 | OpCode | Function | Flags changed <br>if S Suffix|
-|------|--------|-----|
+|------|--------|:-----:|
 | **ADD** | dest := op1 + op2 | NZCV
 | **SUB** | dest := op1 - op2 | NZCV
 | **RSB** | dest := op2 - op1 | NZCV
@@ -49,7 +49,7 @@ ORR R1, R1, #16 ; sets bit 4 in R1
 
 
 | OpCode | Function | Flags changed <br> if S Suffix |
-|----------|------------|----|
+|----------|------------|:----:|
 | **AND** | dest := op1 Bitwise AND op2| NZ |
 | **ORR** | dest := op1 Bitwise OR op2 | NZ
 | **EOR** | dest := op1 Bitwise exclusive OR op2 | NZ|
@@ -68,7 +68,7 @@ MOVS R10, R3 ; load R10 with copy of value in R3, write flags `NZ`.
 
 
 | OpCode | Function | Flags changed <br> if S suffix |
-|----------|------------|-----|
+|----------|------------|:-----:|
 | **MOV** | dest := op2| NZ |
 | **MVN** | dest := Bitwise invert op2 | NZ |
 
@@ -135,4 +135,4 @@ The instruction suffix (`FD` here) indicating stack or tranfer type can be any o
 | **DAT1 DCB d1, d2,...,dn** | Set next n data bytes to numeric values <br> given by operands d1,...,dn (no #).<br> n must be divisible by 4. <br>Bytes are written in little-endian address order. <br> Label `DAT1` is usual but not compulsory.|
 | **DAT2 FILL EXPR** | EXPR is a literal expression (without #). <br> Fill next EXPR words of data memory with 0 <br> Label `DAT2` is usual but not compulsory.
 | **ADR Ra, LABEL** | Set Ra to `LABEL`. Same as `MOV Ra, #LABEL` but <br> literal values close to PC are allowed.<br> Useful to load data area label values.|
-| **LAB1 EQU LABEL + 4**| `EQU` sets its label, in this case `LAB1`, <br>  equal to the given constant expresion.<br> Forward references are allowed. |
+| **LAB1 EQU LABEL + 4**| `EQU` sets its label, in this case `LAB1`, <br>  equal to the given constant expression.<br> Forward references are allowed. |
