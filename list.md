@@ -106,7 +106,7 @@ TEQ R3, R4 ; set `NZ` flags on R3 XOR R4
 | other  | [Other modes](ea.html) |
 
 
-See [Address Modes](ea.html) for more details and additional modes.
+See [Address Modes](ea.html#content) for more details and additional modes.
 
 | Instruction | Function | Notes |
 |:----------|------------|-------|
