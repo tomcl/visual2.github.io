@@ -2,11 +2,11 @@
 
 ## Syntax
 
-Each assembley source line consists of *words* separated by whitespace, `,` or `;`. Additional spaces or tabs between or before words are ignored. Unlike many assemblers initial space has no significance. Each line startes, optionally, with a label. If the second word is a valid op-code then the first word will be interpreted as a label, otherwise it must be an op-code.
+Each assembly source line consists of *words* separated by whitespace, `,` or `;`. Additional spaces or tabs between or before words are ignored. Unlike many assemblers initial space has no significance. Each line startes, optionally, with a label. If the second word is a valid op-code then the first word will be interpreted as a label, otherwise it must be an op-code.
 
 
 ```
-[Label] OPCODE operand1, operand2, operand3 [ ; comment ]
+[Label] OPCODE operand1, ... , operandn [ ; comment ]
 ```
 
 
