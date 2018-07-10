@@ -100,7 +100,7 @@ TEQ R3, R4 ; set `NZ` flags on R3 XOR R4
 | EA | Address Mode |
 |-----|-------|
 | [Rb] | Register |
-| [Rb,#N] | Register |
+| [Rb,#N] | Register Offset |
 | [Rb,#N]! | Register pre-increment|
 | Rb, #N  | register post-increment|
 | other  | [Other modes](https://tomcl.github.io/visual2.github.io/ea.html#content) |
