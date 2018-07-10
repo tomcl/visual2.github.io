@@ -3,7 +3,7 @@
 
 ### Data Processing Instructions
 
-These instructions alter register values and/or status flags based on the values in registers. They all use an `op2` operand which can be a registers, like `op1` and `dest`, or various other options. See [Flexible Operand 2](flexop2.html) for details.
+These instructions alter register values and/or status flags based on the values in registers. They all use an `op2` operand which can be a registers, like `op1` and `dest`, or various other options. See [Flexible Operand 2](https://tomcl.github.io/visual2.github.io/flexop2.html#content) for details.
 
 All DP instructions except Compare have an optional `S` suffix that controls if flags are changed (S) or preserved (no S). Flags are written from the value computed. The value computed is written to dest except in compare instructions.
 
