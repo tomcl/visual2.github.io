@@ -103,16 +103,16 @@ TEQ R3, R4 ; set `NZ` flags on R3 XOR R4
 | [Rb,#N] | Register |
 | [Rb,#N]! | Register pre-increment|
 | Rb, #N  | register post-increment|
-| other  | [Other modes](ea.html) |
+| other  | [Other modes](https://tomcl.github.io/visual2.github.io/ea.html#content) |
 
 
-See [Address Modes](ea.html#content) for more details and additional modes.
+See [Address Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) for more details and additional modes.
 
 | Instruction | Function | Notes |
 |:----------|------------|-------|
-| **LDR Rd, EA** | Rd := mem32[EA] | [EA](ea.html) is divisible by 4
+| **LDR Rd, EA** | Rd := mem32[EA] | [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4
 | **LDRB Rd, EA** | Rd := mem8[EA] | 
-| **STR Rs, EA** | mem32[EA] := Rs | [EA](ea.html) is divisible by 4
+| **STR Rs, EA** | mem32[EA] := Rs | [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4
 | **STRB Rs, EA**| mem8[EA] := Rs
 
 
@@ -120,7 +120,7 @@ See [Address Modes](ea.html#content) for more details and additional modes.
 
 The register list (in `{}`) can contain any distinct set of individual registers or ranges, for 1 - 15 data words transferred. The pointer register must not be in the register list.
 
-The instruction suffix (`FD` here) indicating stack or tranfer type can be any of `FD,FA,ED,EA,IA,IB,DA,DB`. See [suffixes](suffixes.html) page for details of suffixes and specifcation of which memory addresses are used in the transfer.
+The instruction suffix (`FD` here) indicating stack or tranfer type can be any of `FD,FA,ED,EA,IA,IB,DA,DB`. See [suffixes](https://tomcl.github.io/visual2.github.io/suffixes.html) page for details of suffixes and specifcation of which memory addresses are used in the transfer.
 
 | Instruction | Function | Notes |
 |-------------|------------|-------|
