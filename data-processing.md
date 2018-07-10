@@ -9,10 +9,10 @@ There are four types of instruction.
 
 | Type | Example | Format | Flags <br> Changed | Register <br> Changed |
 |------|--------|------------|-------------|----------------|
-| [Arithmetic](list.html#arithmetic) | ADD R1, R2, R3 | ADD dest, op1 , op2 | if S suffix | dest |
-| [Logical](list.html#logical) | AND R1, R2, R3 | AND dest, op1 , op2 | if S suffix | dest |
-| [Move](list.html#move) | MOV R1, R2 | MOV dest, op2 | If S suffix | dest |
-| [Compare](list.html#compare) | CMP R1, R2 | CMP op1, op2 | Always | None |
+| [Arithmetic](list.html#arithmetic-instructions) | ADD R1, R2, R3 | ADD dest, op1 , op2 | if S suffix | dest |
+| [Logical](list.html#logical-instructions) | AND R1, R2, R3 | AND dest, op1 , op2 | if S suffix | dest |
+| [Move](list.html#move-instructions) | MOV R1, R2 | MOV dest, op2 | If S suffix | dest |
+| [Compare](list.html#compare-instructions) | CMP R1, R2 | CMP op1, op2 | Always | None |
 
 
 ## Operand Formats
