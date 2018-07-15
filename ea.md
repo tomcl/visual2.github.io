@@ -1,14 +1,12 @@
 # UAL Address Modes
 
-LDR and STR instructions second operand defines an _addressing mode_. 
-The addressing mode determines how the _effective address_ of the memory transfer is calculated, and whether the _base register_ is updated
-as a side effect of the instruction.
+LDR, LDRB, STR, STRB instructions second operand defines an _addressing mode_. 
+The addressing mode determines how the _effective address_ of the memory transfer is calculated, and whether the _base register_ is updated as a side effect of the instruction.
 
-There are four addressing modes shown in the table below, and a special case. The first mode, register addressing, 
-is a special case of Offset addressing where OFFSET is 0. Thus there are three main modes.
+ARM has three addressing modes: _offset_, with optional _pre-_ or _post-_ indexing. The first line syntax, _register addressing_, 
+is a special case of Offset addressing where OFFSET is 0.
 
-The base register is Rb, and optionally updated. The OFFSET component can be a 
-numeric literal, a register, or a shifted register. 
+The base register is Rb, and optionally updated. The OFFSET component, added to the base register value to make the effective address,  can be a  numeric literal, a register, or a shifted register. 
 
 | Mode | Second Operand Format | Effective <br> Address | Update|
 |------|-------------------|-----------------------|--------|
@@ -22,3 +20,15 @@ numeric literal, a register, or a shifted register.
 | Numeric | #N | N is a positive or negative literal |
 | Register | Rx |   |
 | Scaled register | Rx, LSL #S | ASR, LSR also allowed. 0 < S < 32 is the number of bits Rx is shifted to make OFFSET |
+
+## Examples
+
+```
+LDR  R0, [R1]
+STR  R0, [R1,#100]   ; a numeric offset can be added
+LDRB R0, [R1,#LAB]   ; numeric offsets can be assembler symbols
+STR  R0, [R1,#0xa0]! ; pre-indexed numeric offset
+LDR  R0, [R1, R2]!   ; pre-indexed register offset
+LDR  R0, [R1, R2, LSL #2]! ; pre-indexed scaled register offset
+STRB R0, [R1], R2, LSL #2  ; post-indexed scaled register offset
+```
