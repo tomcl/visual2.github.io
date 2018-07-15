@@ -63,6 +63,7 @@ BICS R10, R10, 0x80000; clear bit 19 of R10, setting falgs NZ
 OpCode dest, op2
 ```
 Examples
+
 ```
 MVN R1, R1   ; inverts bits in R1
 MOVS R10, R3 ; load R10 with copy of value in R3, write flags `NZ`.
@@ -73,6 +74,23 @@ MOVS R10, R3 ; load R10 with copy of value in R3, write flags `NZ`.
 |----------|------------|:-----:|
 | **MOV** | dest := op2| NZ |
 | **MVN** | dest := Bitwise invert op2 | NZ |
+
+#### Shift/Rotate instructions
+
+```
+OpCode dest, op2
+```
+
+Examples
+
+```
+LSLS R0, R1, #4     ; same as MOVS R0, R1, LSL #4
+ROR  R1, R1, #2     ; same as MOV R1, R1, ROR #2
+RRX  R1, R2         ; same as MOV R1, R2, RRX
+```
+
+These are shorthand for the corresponding `MOV` with shifted *op2*.
+
 
 
 #### Compare Instructions
