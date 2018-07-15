@@ -135,6 +135,6 @@ The instruction suffix (`FD` here) indicating stack or tranfer type can be any o
 |:---:|:----------|-----------|
 | **DCD** | `DAT DCD d1, d2,...,dn` | Set next n data words to numeric values <br> given by operands d1,...,dn (no #).<br> Label `DAT` is usual but not compulsory
 | **DCB** | `DAT1 DCB d1, d2,...,dn` | Set next n data bytes to numeric values <br> given by operands d1,...,dn (no #).<br> n must be divisible by 4. <br>Bytes are written in little-endian address order. <br> Label `DAT1` is usual but not compulsory.|
-| **FILL** | `DAT2 FILL EXPR` | EXPR is a literal expression (without #). <br> Fill next EXPR words of data memory with 0 <br> Label `DAT2` is usual but not compulsory.
+| **FILL** | `DAT2 FILL 40` | `40` can be any literal numeric expression (without #). <br> Fill next 40 words of data memory with 0 <br> Label `DAT2` is usual but not compulsory.
 | **ADR** | `ADR Ra, LABEL` | Set Ra to `LABEL`. Same as `MOV Ra, #LABEL` but <br> literal values close to PC are allowed.<br> Useful to load data area label values.|
-| **EQU** | `LAB1 EQU LABEL + 4`| `EQU` sets its label, in this case `LAB1`, <br>  equal to the given constant expression.<br> Forward references are allowed. |
+| **EQU** | `LAB1 EQU LABEL + 4`| `EQU` sets its label, in this case `LAB1`, <br>  equal to the given numeric expression.<br> Forward references are allowed. |
