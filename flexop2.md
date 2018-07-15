@@ -1,19 +1,20 @@
 ﻿# Flexible Operand 2
 
-Data processing instruction `op2` has a number of formats. The `SFT` code can be any of `LSL`, `LSR`, `ASR`, `ROR`.
+Data processing instruction `op2` has a number of formats. 
 
 | Op2 format | Examples | Number used in DP <br> instruction |
 |------------|---------|---------------------------------|
-| Register | `R1` | The value of a register |
-| Literal | `#22` | An immediate numeric literal |
-| Shift | `R1, LSL #3` | The value of a register <br> shifted by a constant |
-| Register-valued Shift | `R1, ASR R2` | The value of a register shifted <br> by the number in another register |
-| RRX | `R1, RRX` | `RRX` does not use a literal <br> and always makes a value <br> rotated right by 1 |
+| Register | `MOV R0, R1` | The value of a register |
+| Literal | `MOV R0, #22` | An immediate numeric literal |
+| Shift | `MOV R0, R1, LSL #3` | The value of a register <br> shifted by a constant |
+| Register-valued Shift | `MOV R0, R1, ASR R2` | The value of a register shifted <br> by the number in another register |
+| RRX | `MOV R0, R1, RRX` | `RRX` does not use a literal <br> and always makes a value <br> rotated right by 1 |
 
 ## Notes
 
-* Register-valued shifts `Rx, SFT Ry` use the lowest 5 bits of `Ry` to determine the number of bits by which Rx is shifted
+* Register-valued shifts `Rx, LSL Ry`. The `LSL` code can be any of `LSL`, `LSR`, `ASR`, `ROR`. In all cases the LS 5 bits of `Ry` determine the number of bits by which Rx is shifted or rotated.
 * `Rm, RRX`. is a 33 bit rotate right in which Rm(0) -> C -> Rm(31), and all other bits of Rm shift right by 1.
+* Note that for all shifted op2 `MOV R0, R1, LSL #3` the shifted register `R1` does not change. Its value, shifted, is used as the op2 in the instruction operation. This value is not written back into R1.
 
 ## Numeric Literals
 * Allowed immediate literal values:
