@@ -111,9 +111,9 @@ See [Address Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) f
 | Instruction | Function | Notes |
 |:----------|------------|-------|
 | **LDR Rd, EA** | Rd := mem32[EA] | [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4
-| **LDRB Rd, EA** | Rd := mem8[EA] | 
+| **LDRB Rd, EA** | Rd := mem8[EA] | This loads one byte from memory into the LS 8 bits of Rd. <br> The MS 24 bits are zeroed.
 | **STR Rs, EA** | mem32[EA] := Rs | [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4
-| **STRB Rs, EA**| mem8[EA] := Rs
+| **STRB Rs, EA**| mem8[EA] := Rs | This writes the LS 8 bits of Rd into the specified memory byte. <br> Other bytes in the same memore word are unaffected.
 
 
 ### Multiple Register Memory Transfer Instructions
