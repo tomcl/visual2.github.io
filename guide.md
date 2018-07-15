@@ -31,3 +31,5 @@ Any line can be **labelled** with a symbol (annotated in red on the screenshot) 
 When writing assembler programs you can use instructions (executed sequentially) that refer to data locations you have defined, or that read and write uninitialised memory you have not defined.
 
 The VisUAL simulator emulates an ARM CPU by sequentially executing instructions. A single assembler file will always start from the first defined instruction in the file. Simulation terminates at the end of the file, or if an `END` line (5 here) is executed.
+
+The current assembler program can be simulated either in whole or step-by-step using the VisUAL top bar buttons. During simulation the simulated content of CPU registers is displayed in the right-hand window. For more complex usage tabs also allow you to see the contents of memory, and the values assigned to program symbols.
