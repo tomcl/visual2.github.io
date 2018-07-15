@@ -11,13 +11,13 @@ Each assembly source line consists of *words* separated by whitespace, `,` or `;
 
 
 
-## [Data Processing Instructions](https://tomcl.github.io/visual2.github.io/data-processing.html)
+### [Data Processing Instructions](https://tomcl.github.io/visual2.github.io/data-processing.html)
 
-## [Single Memory Transfer Instructions](https://tomcl.github.io/visual2.github.io/memory-transfer.html)
+### [Single Memory Transfer Instructions](https://tomcl.github.io/visual2.github.io/memory-transfer.html)
 
-## [Multiple Register Memory Transfer Instructions](https://tomcl.github.io/visual2.github.io/multiple-register-transfer.html)
+### [Multiple Register Memory Transfer Instructions](https://tomcl.github.io/visual2.github.io/multiple-register-transfer.html)
 
-## [Full Instruction List](https://tomcl.github.io/visual2.github.io/list.html#instructions)
+### [Full Instruction List](https://tomcl.github.io/visual2.github.io/list.html#instructions)
 
 
 ## Introduction
