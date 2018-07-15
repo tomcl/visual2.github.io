@@ -25,7 +25,7 @@ The base register is Rb, and optionally updated. The OFFSET component, added to 
 
 ```
 LDR  R0, [R1]
-STR  R0, [R1,#100]   ; a numeric offset can be added
+STR  R0, [R1,#-100]  ; a numeric offset can be used
 LDRB R0, [R1,#LAB]   ; numeric offsets can be assembler symbols
 STR  R0, [R1,#0xa0]! ; pre-indexed numeric offset
 LDR  R0, [R1, R2]!   ; pre-indexed register offset
