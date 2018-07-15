@@ -28,8 +28,8 @@ The base register is Rb, and optionally updated. The OFFSET component, added to 
 LDR  R0, [R1]         ; register addressing, the effective address is the value stored in R1
 STR  R0, [R1, #-100]  ; a numeric offset can be used
 LDRB R0, [R1, #LAB]   ; numeric offsets can be assembler symbols
-STR  R0, [R1,#0xa0]! ; pre-indexed numeric offset
-LDR  R0, [R1, R2]!   ; pre-indexed register offset
+STR  R0, [R1,#0xa0]!  ; pre-indexed numeric offset
+LDR  R0, [R1, R2]!    ; pre-indexed register offset
 LDR  R0, [R1, R2, LSL #2]! ; pre-indexed scaled register offset
 STRB R0, [R1], R2, LSL #2  ; post-indexed scaled register offset
 ```
