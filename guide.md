@@ -2,7 +2,7 @@
 
 ## Syntax
 
-Each assembly source line consists of *words* separated by whitespace, `,` or `;`. Additional spaces or tabs between or before words are ignored. Unlike many assemblers initial space has no significance. Each line startes, optionally, with a label. If the second word is a valid op-code then the first word will be interpreted as a label, otherwise it must be an op-code.
+Each assembly source line consists of *words* separated by whitespace, `,` or `;`. Additional spaces or tabs between or before words are ignored. Unlike many assemblers initial space has no significance. Each line starts, optionally, with a label. If the second word is a valid op-code then the first word will be interpreted as a label, otherwise it must be an op-code.
 
 
 ```
@@ -24,9 +24,9 @@ Each assembly source line consists of *words* separated by whitespace, `,` or `;
 
 ![](visual-screen.jpg)
 
-The picture above is a screenshot of VisUAL2 editing an **assembler program** containing lines 1 - 6 of text. These lines define part of an ARM CPU's initial memory. Lines (1 - 4) have ARM instruction op-codes and each represent a single ARM instruction. The instructions, each stored as a single word of memory, define the contents of a **code memory area**, starting from memory address 0. Line 6 has an data definition op-codes `DCD` and defines data locations used by the program which are placed automatically in memory addresses after the code area. 
+The picture above is a screenshot of VisUAL2 editing an **assembler program** containing lines 1 - 6 of text. These lines define part of an ARM CPU's initial memory. Lines (1 - 4) have ARM instruction op-codes and each represent a single ARM instruction. The instructions, each stored as one word of memory, define the contents of a **code memory area**, starting from memory address 0. Line 6 has an data definition op-codes `DCD` and defines data locations used by the program which are placed automatically in memory addresses after the code area. 
 
-Any line can be **labelled** with a symbol (annotated in red on the screenshot) that references the memory address into which the line is placed. For advanced users `EQU` lines define additional symbols. Programmers can use symbols in instructions and therefore the memory addresses into which each line of assembler is placed are not normally needed when writing programs. They can be checked by using the symbols tab of the right-hand panel in VisUAL2 after a program has run.
+Any line can be **labelled** with a symbol (annotated in red on the screenshot) that references the memory address into which the line is placed. For advanced users `EQU` lines can define additional symbols. Programmers use symbols in instructions and therefore the memory addresses into which each line of assembler is placed are not normally needed when writing programs. They can be checked by using the symbols tab of the right-hand panel in VisUAL2 after a program has run.
 
 When writing assembler programs you can use instructions (executed sequentially) that refer to data locations you have defined using labels or numeric addresses, or that read and write uninitialised data memory you have not defined.
 
