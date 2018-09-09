@@ -1,5 +1,17 @@
 # ARM Condition Codes
 
+ARM condition codes can be added to any valid ARM op-code (but not pseudo-instructions or directives). The condition code comes *after* any instruction suffixes.
+
+An instruction with a condition code will be executed conditionally. Note that if the instruction is not executed there is no state change except for PC increasing to the next instruction. The non-executed instruction takes one cycle, whatever the execution time of the instruction when it is executed.
+
+**Examples**
+
+```
+MOVEQ
+STRBVC
+ADDSGE
+LDMFDNE
+```
 
 |Code | Condition | Flags |
 |-----|-----------|-------|
