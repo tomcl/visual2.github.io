@@ -127,16 +127,9 @@ TEQ R3, R4 ; set `NZ` flags on R3 XOR R4
 
 ### Single Register Memory Transfer Instructions
 
-| EA | Address Mode |
-|-----|-------|
-| [Rb] | Register |
-| [Rb,#N] | Register Offset |
-| [Rb,#N]! | Register pre-increment|
-| Rb, #N  | register post-increment|
-| other  | [Other modes](https://tomcl.github.io/visual2.github.io/ea.html#content) |
 
 
-See [Address Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) for more details and additional modes.
+See [Address Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) for details of **EA** modes.
 
 | OpCode | Instruction | Function | Notes |
 |:----|:----------|------------|-------|
@@ -152,6 +145,15 @@ See [Address Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) f
 3. [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4.
 4. This writes the LS 8 bits of Rd into the specified memory byte. <br> Other bytes in the same memore word are unaffected.
 5. The literal can be any numeric expression of constants and symbols, and does not have a #. Unlike MOV there is no restriction on value. Technically this instruction is a pseudo-instruction, translated by assembler into an `LDR` with EA offset from PC, and a `DCD` that defines the the 32 bit constant. Programmers can use it exactly as `MOV` with literal op2, noting that it is slower than `MOV`.
+
+| **Effective Address EA** | **Address Mode** |
+|-----|-------|
+| [Rb] | Register |
+| [Rb,#N] | Register Offset |
+| [Rb,#N]! | Register pre-increment|
+| Rb, #N  | register post-increment|
+| other  | [Other modes](https://tomcl.github.io/visual2.github.io/ea.html#content) |
+
 
 ### Multiple Register Memory Transfer Instructions
 
