@@ -18,10 +18,11 @@ All DP instructions except Compare have an optional `S` suffix that controls if 
 
 #### Arithmetic Instructions
 
-```
-OpCode dest, op1, op2
-```
-Examples:
+
+*OpCode dest, op1, op2*
+
+**Examples**
+
 ```
 SUB R10, R5, R4 ; set R10 equal to R5 + R4
 ADD R1, R1, #1  ; add 1 to R1
@@ -44,7 +45,7 @@ RSBS R1, R1, #0 ; negate R1 setting NZCV
 *Opcode dest, op1, op2*
 
 
-**Example**
+**Examples**
 
 ```
 ORR R1, R1, #16 ; sets bit 4 in R1
@@ -65,7 +66,7 @@ BICS R10, R10, 0x80000; clear bit 19 of R10, setting falgs NZ
 *OpCode dest, op2*
 
 
-**Example**
+**Examples**
 
 ```
 MVN R1, R1   ; inverts bits in R1
@@ -142,13 +143,13 @@ See [Address Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) f
 | **LDR**|`LDR Rd, EA` | Rd := mem32[EA] | 1
 | **LDRB**| `LDRB Rd, EA` | Rd := mem8[EA] | 2
 | **STR**| `STR Rs, EA` | mem32[EA] := Rs | 3
-| **STRB** `STRB Rs, EA`| mem8[EA] := Rs | 4
+| **STRB** |`STRB Rs, EA`| mem8[EA] := Rs | 4
 |**LDR =** | `LDR Rd, =Literal` <br> LDR Rd, =DATA <br> LDR Rd, =1571| Rd := Literal | 5
 
 
-1.  [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4|
-2. This loads one byte from memory into the LS 8 bits of Rd. <br> The MS 24 bits are zeroed.|
-3. [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4|
+1.  [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4.
+2. This loads one byte from memory into the LS 8 bits of Rd. <br> The MS 24 bits are zeroed.
+3. [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4.
 4. This writes the LS 8 bits of Rd into the specified memory byte. <br> Other bytes in the same memore word are unaffected.
 5. The literal can be any numeric expression of constants and symbols, and does not have a #. Unlike MOV there is no restriction on value.
 
@@ -156,7 +157,9 @@ See [Address Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) f
 
 The register list (in `{}`) can contain any distinct set of individual registers or ranges, for 1 - 15 data words transferred. The pointer register must not be in the register list.
 
-The instruction suffix (`FD` here) indicating stack or tranfer type can be any of `FD,FA,ED,EA,IA,IB,DA,DB`. See [suffixes](https://tomcl.github.io/visual2.github.io/suffixes.html) page for details of suffixes and specifcation of which memory addresses are used in the transfer.
+The instruction suffix (`FD` here) indicating stack or tranfer type can be any of **FD**,**FA**,**ED**,**EA**,**IA**,**IB**,**DA**,**DB**`. See [suffixes](https://tomcl.github.io/visual2.github.io/suffixes.html) page for details of suffixes and specifcation of which memory addresses are used in the transfer.
+
+A **!** after the first (stack pointer) register means that this is updated as is needed for a stack operation.
 
 |OpCode|| Instruction | Function | Notes |
 |---|---|-------------|------------|-------|
