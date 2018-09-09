@@ -2,6 +2,7 @@
 
 
 |Code | Condition | Flags |
+|-----|-----------|-------|
 | EQ | equal | Z set |
 | NE | Not equal | Z clear |
 | CS/HS | Unsigned &#x2265 <br> Carry Set / High or Same | C Set |
