@@ -17,6 +17,8 @@ Each assembly source line consists of *words* separated by whitespace, `,` or `;
 
 ### [Multiple Register Memory Transfer Instructions](https://tomcl.github.io/visual2.github.io/multiple-register-transfer.html)
 
+### [Pseudo instructions and directives](https://github.com/tomcl/visual2.github.io/blob/master/list.md#pseudo-instructions-and-directives)
+
 ### [Full Instruction List](https://tomcl.github.io/visual2.github.io/list.html#instructions)
 
 
