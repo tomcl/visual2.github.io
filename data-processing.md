@@ -20,7 +20,7 @@ There are four types of instruction.
 The dest and op1 operands must always be registers. _Flexible op2_ is also allowed to be a literal number (prefixed by #) or a shifted register. All small and some large literal numbers [are allowed](flexop2.html#numeric-literals).
 
 | Op | Example | Format | Notes |
-|----------|---------------|---|
+|----------|---------------|---|---|
 | dest | R5 | Rd (d=0-15) | single register |
 | op1 | R3 | Rn  (n=0-15) | single register |
 | op2 | R1 <br> #101 <br> R1, LSL #1 | Rm (n=0-15)<br> #N (N = op2 integer)<br> ([Shifts](flexop2.html))| [Flexible op2](flexop2.html) |  
