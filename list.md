@@ -40,10 +40,12 @@ RSBS R1, R1, #0 ; negate R1 setting NZCV
 
 #### Logical Instructions
 
-```
-Opcode dest, op1, op2
-```
-Example
+
+*Opcode dest, op1, op2*
+
+
+**Example**
+
 ```
 ORR R1, R1, #16 ; sets bit 4 in R1
 BICS R10, R10, 0x80000; clear bit 19 of R10, setting falgs NZ
@@ -59,10 +61,11 @@ BICS R10, R10, 0x80000; clear bit 19 of R10, setting falgs NZ
 
 #### Move Instructions
 
-```
-OpCode dest, op2
-```
-Examples
+
+*OpCode dest, op2*
+
+
+**Example**
 
 ```
 MVN R1, R1   ; inverts bits in R1
@@ -77,11 +80,11 @@ MOVS R10, R3 ; load R10 with copy of value in R3, write flags `NZ`.
 
 #### Shift/Rotate instructions
 
-```
-OpCode dest, op2
-```
 
-Examples
+*OpCode dest, op2*
+
+
+**Examples**
 
 ```
 LSLS R0, R1, #4     ; same as MOVS R0, R1, LSL #4
@@ -91,15 +94,23 @@ RRX  R1, R2         ; same as MOV R1, R2, RRX
 
 These are shorthand for the corresponding `MOV` with shifted *op2*.
 
+| OpCode | Function |
+|----------|------------|
+| **LSR** |  Logical Shift Right (shift 0s in) |
+| **ASR** | Arithmetic Shift Right (shift sign bit in) | 
+| **LSL** | Logical Shift Left | 
+| **ROR** | Rotate Right (shift RHS bit in) |
+| **RRX** | Rotate Right eXtended - always 1 bit |
+
 
 
 #### Compare Instructions
 
-```
-OpCode op1, op2
-```
+*OpCode op1, op2*
 
-Examples
+
+**Examples**
+
 ```
 CMP R0, R1 ; set `NZCV` flags on subtraction R0 - R1
 TEQ R3, R4 ; set `NZ` flags on R3 XOR R4
@@ -126,13 +137,20 @@ TEQ R3, R4 ; set `NZ` flags on R3 XOR R4
 
 See [Address Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) for more details and additional modes.
 
-| Instruction | Function | Notes |
-|:----------|------------|-------|
-| **LDR Rd, EA** | Rd := mem32[EA] | [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4
-| **LDRB Rd, EA** | Rd := mem8[EA] | This loads one byte from memory into the LS 8 bits of Rd. <br> The MS 24 bits are zeroed.
-| **STR Rs, EA** | mem32[EA] := Rs | [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4
-| **STRB Rs, EA**| mem8[EA] := Rs | This writes the LS 8 bits of Rd into the specified memory byte. <br> Other bytes in the same memore word are unaffected.
+| OpCode | Instruction | Function | Notes |
+|:----|:----------|------------|-------|
+| **LDR**|`LDR Rd, EA` | Rd := mem32[EA] | 1
+| **LDRB**| `LDRB Rd, EA` | Rd := mem8[EA] | 2
+| **STR**| `STR Rs, EA` | mem32[EA] := Rs | 3
+| **STRB** `STRB Rs, EA`| mem8[EA] := Rs | 4
+|**LDR =** | `LDR Rd, =Literal` <br> LDR Rd, =DATA <br> LDR Rd, =1571| Rd := Literal | 5
 
+
+1.  [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4|
+2. This loads one byte from memory into the LS 8 bits of Rd. <br> The MS 24 bits are zeroed.|
+3. [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4|
+4. This writes the LS 8 bits of Rd into the specified memory byte. <br> Other bytes in the same memore word are unaffected.
+5. The literal can be any numeric expression of constants and symbols, and does not have a #. Unlike MOV there is no restriction on value.
 
 ### Multiple Register Memory Transfer Instructions
 
@@ -140,12 +158,12 @@ The register list (in `{}`) can contain any distinct set of individual registers
 
 The instruction suffix (`FD` here) indicating stack or tranfer type can be any of `FD,FA,ED,EA,IA,IB,DA,DB`. See [suffixes](https://tomcl.github.io/visual2.github.io/suffixes.html) page for details of suffixes and specifcation of which memory addresses are used in the transfer.
 
-| Instruction | Function | Notes |
-|-------------|------------|-------|
-| `LDMFD R10!, {R1,R4-R6}` | Load registers R1,R4,R5,R6 <br> from FD stack with stack pointer R10 |update R10|
-| `LDMFD R13, {R1,R10}` | Load registers R1,R10 <br> from FD stack with stack pointer R13 |Do not change R13|
-| `STMFD R8!, {R1,R4-R6}` | Store registers R1,R4,R5,R5 <br> to FD stack with stack pointer R8|Update R8|
-| `STMFD R3, {R1,R10,R14}` | Store registers R1,R10,R11,R12,R13 <br> to FD stack with stack pointer R3| Do not change R3|
+|OpCode|| Instruction | Function | Notes |
+|---|---|-------------|------------|-------|
+|**LDM** | `LDMFD R10!, {R1,R4-R6}` | Load registers R1,R4,R5,R6 <br>Stack Pointer = R10 |update R10|
+| | `LDMFD R13, {R1,R10}` | Load registers R1,R10 <br> Stack pointer = R13 |Do not change R13|
+|**STM** | `STMFD R8!, {R1,R4-R6}` | Store registers R1,R4,R5,R5 <br> Stack pointer = R8|Update R8|
+| | `STMFD R3, {R1,R10,R14}` | Store registers R1,R10,R11,R12,R13 <br> Stack pointer = R3| Do not change R3|
 
 ### Pseudo-instructions and Directives
 
