@@ -150,10 +150,11 @@ See [Address Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) f
 |-----|-------|
 | [Rb] | Register |
 | [Rb,#N] | Register Offset |
-| [Rb,#N]! | Register pre-increment|
-| Rb, #N  | register post-increment|
+| [Rb,#N]! | Register Pre-increment|
+| Rb, #N  | Register Post-increment|
 | other  | [Other modes](https://tomcl.github.io/visual2.github.io/ea.html#content) |
 
+[Details](https://tomcl.github.io/visual2.github.io/ea.html#content)
 
 ### Multiple Register Memory Transfer Instructions
 
