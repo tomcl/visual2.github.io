@@ -137,7 +137,7 @@ See [Address Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) f
 | **LDRB**| `LDRB Rd, EA` | Rd := mem8[EA] | 2
 | **STR**| `STR Rs, EA` | mem32[EA] := Rs | 3
 | **STRB** |`STRB Rs, EA`| mem8[EA] := Rs | 4
-|**LDR =** | `LDR Rd, =Literal` <br> LDR Rd, =DATA <br> LDR Rd, =1571| Rd := Literal | 5
+|**LDR =** | `LDR Rd, =Literal` <br> `LDR Rd, =DATA+4` <br> `LDR Rd, =1571`| Rd := Literal | 5
 
 
 1.  [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4.
@@ -152,7 +152,7 @@ See [Address Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) f
 | [Rb,#N] | Register Offset |
 | [Rb,#N]! | Register Pre-increment|
 | Rb, #N  | Register Post-increment|
-| other  | [Other modes](https://tomcl.github.io/visual2.github.io/ea.html#content) |
+| other  | [Other Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) |
 
 [Details](https://tomcl.github.io/visual2.github.io/ea.html#content)
 
