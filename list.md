@@ -1,5 +1,8 @@
-## UAL Instructions
+## UAL Instruction List
 
+### Instruction Conditions
+
+All UAL op-codes except directives and pseudo-instructions are can have an execution condition attached, see [Instruction Conditions](https://github.com/tomcl/visual2.github.io/blob/master/conditions.md).
 
 ### Data Processing Instructions
 
