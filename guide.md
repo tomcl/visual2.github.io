@@ -21,6 +21,7 @@ Each assembly source line consists of *words* separated by whitespace, `,` or `;
 
 ### [Full Instruction List](https://tomcl.github.io/visual2.github.io/list.html#instructions)
 
+### [Instruction Conditions](https://github.com/tomcl/visual2.github.io/blob/master/conditions.md)
 
 ## Introduction
 
