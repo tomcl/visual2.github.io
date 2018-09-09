@@ -5,8 +5,8 @@
 |-----|-----------|-------|
 | EQ | equal | Z set |
 | NE | Not equal | Z clear |
-| CS/HS | Unsigned &#x2265 <br> Carry Set / High or Same | C Set |
-|CC/LO | Unsigned &lt <br> Carry Clear / Low or Same | C Clear |
+| CS/HS | Unsigned <&#x2265> <br> Carry Set / High or Same | C Set |
+|CC/LO | Unsigned <&lt> <br> Carry Clear / Low or Same | C Clear |
 |MI | Minus (negative) | N Set|
 |PL | Plus (positive or 0) | N clear |
 |VS | Signed overflow | V Set|
