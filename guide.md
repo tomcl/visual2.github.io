@@ -4,10 +4,17 @@
 
 Each assembly source line consists of *words* separated by whitespace, `,` or `;`. Additional spaces or tabs between or before words are ignored. Unlike many assemblers initial space has no significance. Each line starts, optionally, with a label. If the second word is a valid op-code then the first word will be interpreted as a label, otherwise it must be an op-code.
 
+The general form of a source line is as below, where items in square brackets are optional. The number of comma-separated operands required depends on the instruction opcode.
+
 
 ```
-[Label] OPCODE operand1, ... , operandn [ ; comment ]
+[Label] OPCODE operand1, ... , operand [ ; comment ]
 ```
+
+Two special cases:
+
+* An empty line is ignored
+* A line with a label and no instruction is the same as writing the label on the next instruction line
 
 
 
