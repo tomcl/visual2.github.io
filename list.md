@@ -138,16 +138,15 @@ See [Address Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) f
 |:----|:----------|------------|-------|
 | **LDR**|`LDR Rd, EA` | Rd := mem32[EA] | 1
 | **LDRB**| `LDRB Rd, EA` | Rd := mem8[EA] | 2
-| **STR**| `STR Rs, EA` | mem32[EA] := Rs | 3
-| **STRB** |`STRB Rs, EA`| mem8[EA] := Rs | 4
-|**LDR =** | `LDR Rd, =Literal` <br> `LDR Rd, =DATA+4` <br> `LDR Rd, =1571`| Rd := Literal | 5
+| **STR**| `STR Rs, EA` | mem32[EA] := Rs | 1
+| **STRB** |`STRB Rs, EA`| mem8[EA] := Rs | 3
+|**LDR =** | `LDR Rd, =Literal` <br> `LDR Rd, =DATA+4` <br> `LDR Rd, =1571`| Rd := Literal | 4
 
 
-1.  [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4.
+1.  [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) must be divisible by 4.
 2. This loads one byte from memory into the LS 8 bits of Rd. <br> The MS 24 bits are zeroed.
-3. [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4.
-4. This writes the LS 8 bits of Rd into the specified memory byte. <br> Other bytes in the same memore word are unaffected.
-5. The literal can be any numeric expression of constants and symbols, and does not have a #. Unlike MOV there is no restriction on value. Technically this instruction is a pseudo-instruction, translated by assembler into an `LDR` with EA offset from PC, and a `DCD` that defines the the 32 bit constant. Programmers can use it exactly as `MOV` with literal op2, noting that it is slower than `MOV`.
+3. This writes the LS 8 bits of Rd into the specified memory byte. <br> Other bytes in the same memory word are unaffected.
+4. The literal can be any numeric expression of constants and symbols, and does not have a #. Unlike MOV there is no restriction on value. Technically this instruction is a pseudo-instruction, translated by assembler into an `LDR` with EA offset from PC, and a `DCD` that defines the the 32 bit constant. Programmers can use it exactly as `MOV` with literal op2, noting that it is slower than `MOV`.
 
 | **Effective Address EA** | **Address Mode** |
 |-----|-------|
