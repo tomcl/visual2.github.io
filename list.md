@@ -151,7 +151,7 @@ See [Address Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) f
 2. This loads one byte from memory into the LS 8 bits of Rd. <br> The MS 24 bits are zeroed.
 3. [EA](https://tomcl.github.io/visual2.github.io/ea.html#content) is divisible by 4.
 4. This writes the LS 8 bits of Rd into the specified memory byte. <br> Other bytes in the same memore word are unaffected.
-5. The literal can be any numeric expression of constants and symbols, and does not have a #. Unlike MOV there is no restriction on value.
+5. The literal can be any numeric expression of constants and symbols, and does not have a #. Unlike MOV there is no restriction on value. Technically this instruction is a pseudo-instruction, translated by assembler into an `LDR` with EA offset from PC, and a `DCD` that defines the the 32 bit constant. Programmers can use it exactly as `MOV` with literal op2, noting that it is slower than `MOV`.
 
 ### Multiple Register Memory Transfer Instructions
 
@@ -177,3 +177,5 @@ A **!** after the first (stack pointer) register means that this is updated as i
 | **FILL** | `DAT2 FILL 40` | `40` can be any literal numeric expression (without #). <br> Fill next 40 words of data memory with 0 <br> Label `DAT2` is usual but not compulsory.
 | **ADR** | `ADR Ra, LABEL` | Set Ra to `LABEL`. Same as `MOV Ra, #LABEL` but <br> literal values close to PC are allowed.<br> Useful to load data area label values.|
 | **EQU** | `LAB1 EQU LABEL + 4`| `EQU` sets its label, in this case `LAB1`, <br>  equal to the given numeric expression.<br> Forward references are allowed. |
+
+See also `LDR =` under [Single Register Transfer]()
