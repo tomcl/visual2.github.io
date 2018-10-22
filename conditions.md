@@ -23,7 +23,7 @@ LDMFDNE
 |PL | Plus (positive or 0) | N clear |
 |VS | Signed overflow | V Set|
 |VC | No signed overflow | V Clear |
-|HI | Unsigned &#8805; <br> *HIgh* | C Set and Z Clear |
+|HI | Unsigned &gt; <br> *HIgh* | C Set and Z Clear |
 |LS| Unsigned &#x2264; <br> *Low or Same* | C clear or Z set |
 |GE| Signed &#x2265; | N = V |
 |LT| Signed &lt; | N &#x2260; V |
