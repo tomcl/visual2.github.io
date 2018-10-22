@@ -28,6 +28,6 @@ LDMFDNE
 |GE| Signed &#x2265; | N = V |
 |LT| Signed &lt; | N &#x2260; V |
 |GT| Signed &gt; | Z clear and N = V |
-|LE| Signed &#x2264; | Z set and N &#x2260; V |
+|LE| Signed &#x2264; | Z set or N &#x2260; V |
 |AL| Always (normally omitted) | any |
 |NV| Never (do not use this) | none|
