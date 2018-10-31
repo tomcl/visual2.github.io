@@ -19,9 +19,10 @@ Data processing instruction `op2` has a number of formats.
 * `MOV` instructions with shift/rotate can use the shift as a short-form alias:
   - `MOV R0, R1, ASR #4` -> `ASR R0, R1, #4`
   - `MOV R3, R3, RRX` -> `RRX R3,R3`
-* Register-valued shifts `Rx, LSL Ry`. The `LSL` code can be any of `LSL`, `LSR`, `ASR`, `ROR`. In all cases the LS 5 bits of `Ry` determine the number of bits by which Rx is shifted or rotated.
+* Register-valued shifts `Rx, LSL Ry`. The `LSL` code can be any of `LSL`, `LSR`, `ASR`, `ROR`. In all cases `Ry(4:0)` determine the shift/rotate number of bits.
 * `Rm, RRX`. is a 33 bit rotate right in which Rm(0) -> C -> Rm(31), and all other bits of Rm shift right by 1.
-* Note that for all shifted op2 `MOV R0, R1, LSL #3` the shifted register `R1` does not change. Its value, shifted, is used as the op2 in the instruction operation. This value is not written back into R1.
+* Note that for all shifted op2 `MOV R0, R1, LSL #3` the shifted register e.g. `R1` does not change. Its value, shifted, is used as the op2 in the instruction operation. This value is not written back into R1.
+* Valid shift/rotate numbers are in range #1 - #31.
 
 ## Numeric Literals
 * Allowed immediate literal values:
