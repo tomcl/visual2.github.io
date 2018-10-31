@@ -5,13 +5,16 @@ Data processing instruction `op2` has a number of formats.
 | Op2 format | Examples | Number used in DP <br> instruction |
 |------------|---------|---------------------------------|
 | Register | `MOV R0, R1` | The value of a register |
-| Literal | `MOV R0, #22` | An immediate numeric literal |
-| Shift | `MOV R0, R1, LSL #3` | The value of a register <br> shifted by a constant |
+| Literal | `ADD R0, R1, #22` | An immediate numeric literal |
+| Shift | `MVNS R0, R1, LSL #3` | The value of a register <br> shifted by a constant |
 | Register-valued Shift | `MOV R0, R1, ASR R2` | The value of a register shifted <br> by the number in another register |
 | RRX | `MOV R0, R1, RRX` | `RRX` does not use a literal <br> and always makes a value <br> rotated right by 1 |
 
 ## Notes
 
+* `MOV` instructions with shift/rotate can use the shift as a short-form alias:
+  - `MOV R0, R1, ASR #4` -> `ASR R0, R1, #4`
+  - `MOV R3, R3, RRX` -> `RRX R3,R3`
 * Register-valued shifts `Rx, LSL Ry`. The `LSL` code can be any of `LSL`, `LSR`, `ASR`, `ROR`. In all cases the LS 5 bits of `Ry` determine the number of bits by which Rx is shifted or rotated.
 * `Rm, RRX`. is a 33 bit rotate right in which Rm(0) -> C -> Rm(31), and all other bits of Rm shift right by 1.
 * Note that for all shifted op2 `MOV R0, R1, LSL #3` the shifted register `R1` does not change. Its value, shifted, is used as the op2 in the instruction operation. This value is not written back into R1.
