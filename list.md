@@ -130,6 +130,14 @@ TEQ R3, R4 ; set `NZ` flags on R3 XOR R4
 
 ### Single Register Memory Transfer Instructions
 
+**Examples**
+
+```
+LDR R0, [R1,#8] ; load into R0 mem32[R1+8]
+STRB R11, [R2,#3]! ; store LS byte R11 in mem8[R2+3], set R2 := R2+3
+LDR R0, [R1],#8 ; load into R0 mem32[R1]. then set R1 := R1+8.
+LDR R5, =DATA ; load 32 bit immediate value of symbol DATA into R5
+```
 
 
 See [Address Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) for details of **EA** modes.
@@ -159,6 +167,13 @@ See [Address Modes](https://tomcl.github.io/visual2.github.io/ea.html#content) f
 [Details](https://tomcl.github.io/visual2.github.io/ea.html#content)
 
 ### Multiple Register Memory Transfer Instructions
+
+**Examples**
+
+```
+LDMED R0, {R1-R3,R8,R10} ; pop from ED stack pointer R0 into R1,R2,R3,R8,R10
+STMFA R11,{R1,R12}  ; push R1,R12 onto FA stack pointer R11
+```
 
 The register list (in `{}`) can contain any distinct set of individual registers or ranges, for 1 - 15 data words transferred. The pointer register must not be in the register list.
 
