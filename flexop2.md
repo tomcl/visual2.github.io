@@ -1,4 +1,8 @@
-﻿# Flexible Operand 2
+# Flexible Op2
+ 
+- MOV Rd, op2 ; op2 in two operand MOV instruction
+- ADD Rd, Rs, op2 ; op2 in 3 operand instruction
+- CMP Rs, op2 ; op2 in 2 operand copare instruction
 
 Data processing instruction `op2` has a number of formats. 
 
