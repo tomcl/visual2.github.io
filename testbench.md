@@ -1,4 +1,4 @@
-# testbenches
+# VisUAL2 Testbenches
 
 A file loaded into VisUAL2 is considered a testbench if it starts with the line:
 
