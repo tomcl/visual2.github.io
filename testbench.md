@@ -32,12 +32,14 @@ Subsequent lines make up a sequence of 1 or more **Tests**. Each Test specifies 
 
 ```
 ##TESTBENCH
+
 #TEST 1
 IN R0 is 1
 IN R1 is 2
 OUT R2 is 3
 IN R3 ptr 1,2,3,7,11
 IN R4 ptr 6,10,88,100,900
+
 #TEST 2
 IN R0 is 1
 IN R1 is 2
