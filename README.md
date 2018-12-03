@@ -21,6 +21,6 @@ VisuAL is designed to be self-documenting: no manual needed. Try it and see!
 
 ## Documentation for testbench files
 
-Visual2 has a simple testbench feature that allows automated testing and/or manual testing with inputs specified by a file. Documented [here](#testbench.md)
+Visual2 has a simple testbench feature that allows automated testing and/or manual testing with inputs specified by a file. Documented [here](testbench.md)
 .
 
