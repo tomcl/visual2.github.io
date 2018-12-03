@@ -18,3 +18,9 @@ See the [UAL Guide](https://tomcl.github.io/visual2.github.io/guide.html#content
 VisUAL2 can be downloaded as portable Windows, OS-X and linux binaries, or can be recompiled from source.
 
 VisuAL is designed to be self-documenting: no manual needed. Try it and see!
+
+## Documentation for testbench files
+
+Visual2 has a simple testbench feature that allows automated testing and/or manual testing with inputs specified by a file. Documented [here](#testbench.md)
+.
+
