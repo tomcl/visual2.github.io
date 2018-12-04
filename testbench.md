@@ -28,7 +28,7 @@ Subsequent lines make up a sequence of 1 or more **Tests**. Each Test specifies 
   
   
 
-## Example 1
+## Tutorial
 
 ```
 ##TESTBENCH
@@ -51,12 +51,12 @@ IN R4 ptr 6,10,88,100,900
 - Load this code into a VisUAL2 buffer. Create another buffer (just one) which is empty.
 - run the testbench as follows
   - Run button on testbench buffer
-  - Run button -> testbench on (empty) code buffer
+  - Test menu -> testbench on (empty) code buffer
 - Note the errors highlighted in red in the testbench file
 - Add `ADD R2,R1,R0` to the code buffer
 - Rerun the testbench
 - Both tests pass (green annotations in testbench file)
-- Do: Run Menu -> Step into test -> Test 1
+- Do: Test Menu -> Step into test -> Test 1
   - This starts the code with the initial data from the testbench
   - Check the contents of registers and memory, see how this relates to the testbench `IN` data definitions
 
