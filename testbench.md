@@ -1,9 +1,31 @@
 # VisUAL2 Testbenches
 
-A file loaded into VisUAL2 is considered a testbench if it starts with the line:
+To get started quickly go through the Tutorial below.
+
+Visual2 allows predefined tests written in a *testbench* file to be run on an assembler file. Each test will
+
+- Set up input data
+- run (or branch to a specified subroutine in) the tested program
+- check the results against written answers
+
+There are two ways to run a testbench `tb.s` on an assembly file `myprog.s`.
+
+1. Load `tb.s` and `myprog.s` with *no other* `.s` file. Run *Test -> Run All Tests*
+2. Load `tb.s` and `myprog.s` with *no other* `.s` file. View the tab containing `tb.s`. Click `Run`.
+
+When a testbench is run it will go through its tests and mark each test (with red or green lines in the testbench tab) to say whether it has passed or failed. If a test fails no additional tests will be checked.
+
+## Debugging Tested Code
+
+- The initial data (memory and registers) from a single testbench file Test can be used when single-stepping through a program with   *Test-> Step into test->(select test)*. The program will start running with the Test initial data and stop on its first instruction.
+- Note that this is also a convenient way to see exactly what data a testbench will set up
+
+## Writing Testbenches
+
+A `.s` file loaded into VisUAL2 is considered a testbench if it starts with the line:
 
 ```
-##TESTBENCH
+##TESTBENCH  other characters form comment
 ```
 
 Subsequent lines make up a sequence of 1 or more **Tests**. Each Test specifies *inputs* and *outputs* used in testing an assembler program.
@@ -43,15 +65,15 @@ IN R3 ptr 1,2,3,7,11
 IN R4 ptr 6,10,88,100,900
 
 #TEST 2
-IN R0 is 1
-IN R1 is 2
-OUT R2 is 3
+IN R0 is 10
+IN R1 is 200
+OUT R2 is 210
 IN R3 ptr 1,2,3,7,11
 IN R4 ptr 6,10,88,100,900
 ```
 
 - Load this code into a VisUAL2 buffer. Create another buffer (just one) which is empty.
-- run the testbench as follows
+- Run the testbench as follows
   - Run button on testbench buffer
   - Test menu -> testbench on (empty) code buffer
 - Note the errors highlighted in red in the testbench file
@@ -61,6 +83,8 @@ IN R4 ptr 6,10,88,100,900
 - Do: Test Menu -> Step into test -> Test 1
   - This starts the code with the initial data from the testbench
   - Check the contents of registers and memory, see how this relates to the testbench `IN` data definitions
+- Run `test-> Step into test-> Test 1`
+ - View the data setup in registers and memory to see how the `ptr` inputs work.
 
 
 
