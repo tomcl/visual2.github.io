@@ -22,13 +22,17 @@ When a testbench is run it will go through its tests and mark each test (with re
 
 ## Writing Testbenches
 
+- Case sensitivity: all testbench keywords are case insensitive. Subroutine names are case senitive since in ARM UAL labels are all case sensitive.
+
 A `.s` file loaded into VisUAL2 is considered a testbench if it starts with the line:
 
 ```
 ##TESTBENCH  other characters form comment
 ```
 
-Subsequent lines make up a sequence of 1 or more **Tests**. Each Test specifies *inputs* and *outputs* used in testing an assembler program.
+Subsequent lines make up a sequence of 1 or more **Tests**. Each Test specifies *inputs* and *outputs* used in testing an assembler program, and other test parameters, and starts with a single-line Test header prefixed by #.
+
+Within the lines of a test each line is parsed separately. Order of lines does not matter.
 
 ```
 #TEST 1
