@@ -1,6 +1,6 @@
 # VisUAL2 Testbenches
 
-To get started quickly go through the Tutorial below.
+To get started quickly go through the [Tutorial](#Tutorial).
 
 Visual2 allows predefined tests written in a *testbench* file to be run on an assembler file. Each test will
 
