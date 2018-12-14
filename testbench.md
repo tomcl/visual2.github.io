@@ -5,8 +5,8 @@ To get started quickly go through the [Tutorial](#Tutorial).
 Visual2 allows predefined tests written in a *testbench* file to be run on an assembler file. Each test will
 
 - Set up input data
-- run (or branch to a specified subroutine in) the tested program
-- check the results against written answers
+- Run (or branch to a specified subroutine in) the tested program
+- Check the results against written answers
 
 There are two ways to run a testbench `tb.s` on an assembly file `myprog.s`.
 
