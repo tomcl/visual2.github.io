@@ -15,7 +15,7 @@ See the [README](https://github.com/ImperialCollegeLondon/Visual2/blob/master/RE
 See the [UAL Guide](https://tomcl.github.io/visual2.github.io/guide.html#content) for a top-down guide to ARM assembly language supported by VisUAL2
 
 
-VisUAL2 can be downloaded as portable Windows, OS-X and linux binaries, or can be recompiled from source.
+VisUAL2 can be [downloaded](https://github.com/tomcl/V2releases) as portable Windows, OS-X and linux binaries, or can be recompiled from source.
 
 VisuAL is designed to be self-documenting: no manual needed. Try it and see!
 
