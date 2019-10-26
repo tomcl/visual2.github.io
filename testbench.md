@@ -27,7 +27,7 @@ When a testbench is run it will go through its tests and mark each test (with re
 - Case sensitivity: all testbench keywords are case insensitive. Subroutine names are case senitive since in ARM UAL labels are all case sensitive.
 - Blank lines anywhere are ignored
 - Initial space on each line is ignored
-- ';' *after* '#TEST <testnumb>' optionally introduces a comment
+- `;` *after* `#TEST <testnumb>` optionally introduces a comment
 
 
 ### Header
