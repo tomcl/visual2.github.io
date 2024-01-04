@@ -27,9 +27,9 @@ All DP instructions except Compare have an optional `S` suffix that controls if 
 **Examples**
 
 ```
-SUB R10, R5, R4 ; set R10 equal to R5 + R4
+SUB R10, R5, R4 ; set R10 equal to R5 - R4
 ADD R1, R1, #1  ; add 1 to R1
-RSBS R1, R1, #0 ; negate R1 setting NZCV
+RSBS R1, R1, #0 ; negate R1 setting NZCV (R1 = 0 - R1)
 ```
 
 
